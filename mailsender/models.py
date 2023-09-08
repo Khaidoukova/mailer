@@ -42,6 +42,7 @@ class Mailing(models.Model):
         verbose_name = "Рассылка"
         verbose_name_plural = "Рассылки"
 
+
 class Message(models.Model):
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='Рассылка')
     title = models.CharField(max_length=50, verbose_name='тема письма')

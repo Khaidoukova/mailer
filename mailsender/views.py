@@ -8,6 +8,8 @@ class MailingListView(ListView):
     model = Mailing
 
 
+
+
 class MailingDetailView(DetailView):
     model = Mailing
 
