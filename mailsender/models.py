@@ -9,8 +9,6 @@ class Client(models.Model):
     name = models.CharField(max_length=50, verbose_name='имя получателя')
     comment = models.TextField(verbose_name='комментарий', null=True, blank=True)
 
-
-
     def __str__(self):
         return f'Email: {self.email} ({self.surname} {self.name})'
 
@@ -30,6 +28,7 @@ class Mailing(models.Model):
         ('running', 'запущена'),
         ('completed', 'завершена'),
     ]
+    name = models.CharField(max_length=50, verbose_name='название', default='MyMailing')
     sending_time = models.DateTimeField(default=timezone.now, verbose_name='Время рассылки')
     frequency = models.CharField(max_length=15, default='ежемесячно', choices=FREQUENCY_CHOICES, verbose_name='периодичность')
     status = models.CharField(max_length=15, default='создана', choices=STATUS_CHOICES, verbose_name='статус рассылки')
@@ -54,6 +53,7 @@ class Message(models.Model):
     class Meta:
         verbose_name = "Сообщение"
         verbose_name_plural = "Сообщения"
+
 
 class MailingLogs(models.Model):
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='Рассылка')
