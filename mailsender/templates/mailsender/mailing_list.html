@@ -1,12 +1,13 @@
-{% extends 'mailing/base.html' %}
+{% extends 'mailsender/base.html' %}
 {% load mediapath %}
 {% block content %}
 
 <div class="col-12 mb-5">
-    {% if user.is_authenticated %}
-    <a class="btn btn-outline-primary" href="{% url 'catalog:product_form' %}">Добавить продукт</a>
 
-    {% endif %}
+    <a class="btn btn-outline-primary" href="{% url 'mailsender:create_client' %}">Добавить клиента</a>
+    <a class="btn btn-outline-primary" href="{% url 'mailsender:create_mailing' %}">Добавить рассылку</a>
+
+
 </div>
 
 <div class="album py-5 bg-light">
