@@ -5,7 +5,7 @@ from django.utils import timezone
 # Create your models here.
 class Client(models.Model):
 
-    email = models.CharField(max_length=100, verbose_name='электронный адрес')
+    email = models.CharField(max_length=100, verbose_name='электронный адрес', unique=True)
     name = models.CharField(max_length=50, verbose_name='имя получателя')
     comment = models.TextField(verbose_name='комментарий', null=True, blank=True)
 
@@ -57,10 +57,21 @@ class Message(models.Model):
 
 
 class MailingLogs(models.Model):
+    STATUS_OK = 'ok'
+    STATUS_FAILED = 'failed'
+    STATUSES = (
+        (STATUS_OK, 'Успешно'),
+        (STATUS_FAILED, 'Ошибка'),
+    )
+
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='Рассылка')
     last_try = models.DateTimeField(verbose_name='дата и время последней попытки', null=True, blank=True),
-    status = models.CharField(max_length=15, verbose_name='статус попытки'),
-    server_response = models.CharField(max_length=200, verbose_name='ответ почтового сервера', null=True, blank=True)
+    status = models.CharField(max_length=15, choices=STATUSES, verbose_name='статус попытки'),
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Клиент', default=None)
+
+    class Meta:
+        verbose_name = "Лог"
+        verbose_name_plural = "Логи"
 
 
 

@@ -1,75 +1,37 @@
 {% extends 'mailsender/base.html' %}
-{% load mediapath %}
-{% block content %}
+{% block content%}
 
-<div class="col-12 mb-5">
+    <div class="row mt-2">
+        <div class="col m-2">
+            <h1>Рассылки</h1>
+            <div class="row mt-2">
+        <div class="col m-2">
 
-    <a class="btn btn-outline-primary" href="{% url 'mailsender:create_client' %}">Добавить клиента</a>
-    <a class="btn btn-outline-primary" href="{% url 'mailsender:create_mailing' %}">Добавить рассылку</a>
+            <a class="btn btn-success" href="{% url 'mailsender:create_mailing' %}">Добавить рассылку</a>
 
-
-</div>
-
-<div class="album py-5 bg-light">
-    <div class="container">
-
-        <div class="row">
-            {% for object in object_list %}
-            <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-
-                    <div class="card-body">
-                        <p class="card-text">{{ object }}</p>
-                        <p class="card-text">{{ object.owner }}</p>
-
-                        <p class="card-text">
-                            {{ object.description|truncatechars:50 }}
-                        </p>
-                        <img src="{% mediapath object.preview %}" width="100" height="111">
-
-
-                        <div class="card-footer">
-                            {% if object.active_version_name %}
-                            <p>Номер активной версии: {{ object.active_version_number }}<br>
-                                Название: {{ object.active_version_name }}</p>
-                            {% else %}
-                            <p>Номер активной версии: отсутствует <br>
-                                Название: отсутствует </p>
-                            {% endif %}
-                        </div>
-
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                {% if user.is_authenticated %}
-                                <a href="{% url 'catalog:product_detail' object.id %}"
-                                   class="p-2 btn btn-outline-primary">Купить</a>
-                                {% else %}
-                                <a href="{% url 'users:login' %}"
-                                   class="p-2 btn btn-outline-primary">Купить</a>
-                                {% endif %}
-                                {% if user.is_authenticated %}
-                                <a href="{% url 'catalog:product_update' object.id %}"
-                                   class="p-2 btn btn-outline-primary">Изменить</a>
-                                {% else %}
-                                <a href="{% url 'users:login' %}"
-                                   class="p-2 btn btn-outline-primary">Изменить</a>
-                                {% endif %}
-                                {% if perms.catalog.delete_product %}
-                                <a href="{% url 'catalog:product_confirm_delete' object.id %}"
-                                   class="p-2 btn btn-outline-primary">Удалить</a>
-
-                                {% endif %}
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% endblock %}
         </div>
     </div>
-</div>
+            <table class="table table-reflow">
+                <thead>
+                    <tr class="table-active">
+                        <th>Название рассылки</th>
+                        <th>Время отправки</th>
+                        <th>Периодичность</th>
+                        <th>Статус</th>
+                        <th>Сообщение</th>
+                        <th>Клиенты</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                        <td>{{ object.name }}</td>
+                        <td>{{ object.sending_time }}</td>
+                        <td>{{ object.frequency }}</td>
+                        <td>{{ object.status }}</td>
+                        <td>{{ object.client }}</td>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
