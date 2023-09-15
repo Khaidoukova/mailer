@@ -16,6 +16,6 @@ urlpatterns = [
     path('edit_mailing/<int:pk>', MailingUpdateView.as_view(), name='mailing_update'),
     path('edit_message/<int:pk>', MessageUpdateView.as_view(), name='message_update'),
 
-    #path('create_message/', create_message, name='create_message'),
+
 
 ]

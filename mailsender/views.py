@@ -82,6 +82,13 @@ class MessageDeleteView(DeleteView):
 class MailingListView(ListView):
     model = Mailing
 
+    def get_queryset(self, *args, **kwargs):
+        # user = self.request.user
+        queryset = super().get_queryset(*args, **kwargs)
+
+        return queryset
+
+
 
 class MailingUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Mailing

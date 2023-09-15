@@ -40,56 +40,34 @@
 <div id="services" class="container-fluid primary-section blue">
     <div class="container">
         <h2 class="section-title">Наши рассылки</h2>
-        <hr class="my-4">
+        <hr class="my-10">
         <p class="section-flavor">Достигайте новых высот</p>
         <div class="row">
+            {% for mailing in mailing_list %}
             <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
                         <i class="fas fa-chart-line"></i>
-                        <h3>Красота и здоровье</h3>
-                        <p>Пошли спасать мир!</p>
+                        <h3>{{ mailing.name }}</h3>
+                        <p class="card-text">{{ mailing.owner }}</p>
+
                     </div>
                     <div class="card-footer">
                         <p class="lead">
-                            <a class="btn btn-link" href="#" role="button">Узнать подробнее</a>
+                            <a class="btn btn-link" href="{% url 'mailsender:mailing_detail' mailing.id %}" role="button">Узнать подробнее</a>
+                            {% if user.is_authenticated %}
+                            <a class="btn btn-link" href="{% url 'mailsender:mailing_update' mailing.id %}" role="button">Изменить</a>
+                            {% endif %}
+                            {% if perms.mailing.block_mailing %}
+                            <a class="btn btn-link" href="{% url 'mailsender:mailing_update' mailing.id %}" role="button">Заблокировать</a>
+                            {% endif %}
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm">
-                <div class="card">
-                    <div class="card-body">
-                        <i class="fas fa-reply"></i>
-                        <h3>Строительство и дизайн</h3>
-                        <p>Сделай мне красиво.</p>
-                    </div>
-                    <div class="card-footer">
-                        <p class="lead">
-                            <a class="btn btn-link" href="#" role="button">Узнать подробнее</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card">
-                    <div class="card-body">
-                        <i class="fas fa-users"></i>
-                        <h3>Общение</h3>
-                        <p>Там, где тебе дадут любой непрошеный совет.</p>
-                    </div>
-                    <div class="card-footer">
-                        <p class="lead">
-                            <a class="btn btn-link" href="#" role="button">Узнать подробнее</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
+{% endfor %}
 {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'mailsender/base.html' %}
+
+{% block content%}
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <h2>{{ object.name }}</h2>
+                <p>Дата отправки: {{ object.sending_time }}</p>
+                <p>Периодичность: {{ object.frequency }} руб.</p>
+                <p>Клиенты, подписанные на рвссылку: {{ object.client }} </p>
+                <div class="">
+
+                        {% if perms.catalog.change_product or object.owner == user %}
+                        <a href="{% url 'catalog:product_update' object.id %}" type="button" class="btn btn-outline-primary">изменить</a>
+                        {% endif %}
+                        {% if perms.catalog.delete_product %}
+                        <a href="{% url 'catalog:product_confirm_delete' object.id %}" type="button" class="btn btn-outline-primary">удалить</a>
+                        {% endif %}
+
+                    </div>
+
+                <div class="card-footer">
+                            {% if object.active_version_name %}
+                            <p>Номер активной версии: {{ object.active_version_number }}<br>
+                                Название: {{ object.active_version_name }}</p>
+                            {% else %}
+                            <p>Номер активной версии: отсутствует <br>
+                                Название: отсутствует </p>
+                            {% endif %}
+                        </div>
+
+
+                <button class="btn btn-primary">Положить в корзину</button>
+            </div>
+<div class="col-6">
+
+        </div>
+    </div>
+{% endblock %}

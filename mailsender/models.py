@@ -1,13 +1,15 @@
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+NULLABLE = {'blank': True, 'null': True}
 
-# Create your models here.
 class Client(models.Model):
 
     email = models.CharField(max_length=100, verbose_name='электронный адрес', unique=True)
     name = models.CharField(max_length=50, verbose_name='имя получателя')
     comment = models.TextField(verbose_name='комментарий', null=True, blank=True)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, verbose_name='владелец клиента', **NULLABLE)
 
     def __str__(self):
         return f'Email: {self.email} ({self.name})'
@@ -18,15 +20,15 @@ class Client(models.Model):
 
 class Mailing(models.Model):
     FREQUENCY_CHOICES = [
-        ('daily', 'ежедневно'),
-        ('weekly', 'еженедельно'),
-        ('monthly', 'ежемесячно'),
+        ('ежедневно', 'daily'),
+        ('еженедельно', 'weekly'),
+        ('ежемесячно', 'monthly'),
     ]
 
     STATUS_CHOICES = [
         ('created', 'создана'),
-        ('running', 'запущена'),
-        ('completed', 'завершена'),
+        ('запущена', 'running'),
+        ('завершена', 'completed'),
     ]
     name = models.CharField(max_length=50, verbose_name='название', default='MyMailing')
     sending_time = models.DateTimeField(default=timezone.now, verbose_name='Время рассылки')
