@@ -1,8 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django import forms
 from django.utils.crypto import get_random_string
-
-
 from mailsender.forms import StyleFormMixin
 from users.models import User
 
@@ -24,7 +22,7 @@ class UserRegisterForm(StyleFormMixin, UserCreationForm):
 class UserForm(StyleFormMixin, UserChangeForm):
     class Meta:
         model = User
-        fields = ["email", "password", "first_name", "last_name", "phone", "country", "avatar"]
+        fields = ["email", "password", "first_name", "last_name"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

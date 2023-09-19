@@ -1,8 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
-from django.views.generic import UpdateView, CreateView
+from django.views.generic import UpdateView, CreateView, DetailView
 
 from config import settings
 from users.forms import UserForm, UserRegisterForm
@@ -36,4 +36,28 @@ class RegisterView(CreateView):
             recipient_list=[self.object.email],
         )
         return redirect(self.success_url)
+
+class ProfileView(UpdateView):
+    model = User
+    form_class = UserForm
+    success_url = reverse_lazy('users:profile')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+class UserDetailView(DetailView):
+    model = User
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+def verify_email(request, key):
+    user = get_object_or_404(User, email_confirm_key=key)
+    user.is_active = True
+    user.email_confirm_key = ''
+    user.save()
+    return redirect('users:login')
+
 

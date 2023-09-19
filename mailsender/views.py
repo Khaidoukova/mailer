@@ -2,8 +2,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 
-from mailsender.forms import ClientForm, MessageForm, MailingForm
-from mailsender.models import Client, Mailing, Message, MailingLogs
+from mailsender.forms import ClientForm, MailingForm, ManagerUpdateForm
+from mailsender.models import Client, Mailing, MailingLogs
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 
@@ -48,37 +48,6 @@ class ClientDeleteView(DeleteView):
     success_url = reverse_lazy('mailsender:index')
 
 
-class MessageListView(ListView):
-    model = Message
-
-
-class MessageDetailView(DetailView):
-    model = Message
-
-
-class MessageCreateView(CreateView):
-    model = Message
-    form_class = MessageForm
-    success_url = reverse_lazy('mailsender:index')
-
-    def form_valid(self, form):
-        self.object = form.save()
-        self.object.save()
-
-        return super().form_valid(form)
-
-
-class MessageUpdateView(UpdateView):
-    model = Message
-    form_class = MessageForm
-    success_url = reverse_lazy('mailsender:index')
-
-
-class MessageDeleteView(DeleteView):
-    model = Message
-    success_url = reverse_lazy('mailsender:index')
-
-
 class MailingListView(ListView):
     model = Mailing
 
@@ -87,7 +56,6 @@ class MailingListView(ListView):
         queryset = super().get_queryset(*args, **kwargs)
 
         return queryset
-
 
 
 class MailingUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -104,9 +72,10 @@ class MailingUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesT
         else:
             return False
 
-
-class MailingDetailView(DetailView):
-    model = Mailing
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['owner'] = self.request.user
+        return kwargs
 
 
 class MailingCreateView(CreateView):
@@ -121,9 +90,11 @@ class MailingCreateView(CreateView):
 
         return super().form_valid(form)
 
+
 class MailingDeleteView(DeleteView):
     model = Mailing
     success_url = reverse_lazy('mailsender:index')
+
 
 class MailingLogsView(ListView):
     model = MailingLogs
@@ -133,6 +104,11 @@ class MailingLogsView(ListView):
         return queryset
 
 
+class MailingManagerUpdateView(LoginRequiredMixin, UpdateView):
 
+    template_name = 'mailsender/mailing_manager_form.html'
+    model = Mailing
+    form_class = ManagerUpdateForm
+    success_url = reverse_lazy('mail:mailing_list')
 
 

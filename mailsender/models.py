@@ -31,31 +31,32 @@ class Mailing(models.Model):
         ('завершена', 'completed'),
     ]
     name = models.CharField(max_length=50, verbose_name='название', default='MyMailing')
-    sending_time = models.DateTimeField(default=timezone.now, verbose_name='Время рассылки')
+    start_time = models.DateTimeField(default=timezone.now, verbose_name='Время запуска рассылки')
+    stop_time = models.DateTimeField(default=timezone.now, verbose_name='Время завершения рассылки')
     frequency = models.CharField(max_length=15, default='ежемесячно', choices=FREQUENCY_CHOICES, verbose_name='периодичность')
     status = models.CharField(max_length=15, default='создана', choices=STATUS_CHOICES, verbose_name='статус рассылки')
     client = models.ManyToManyField(Client)
+    title = models.CharField(max_length=50, verbose_name='тема письма', default='Message Title>')
+    body = models.TextField(verbose_name='тело письма', **NULLABLE)
+    is_active = models.BooleanField(default=True, verbose_name='Статус активности')
+
+    def get_status(self):
+        now = timezone.now()
+        if self.start_time < now < self.stop_time:
+            self.status = "running"
+        elif now > self.stop_time:
+            self.status = "completed"
+        self.save()
+        return self.status
+
 
     def __str__(self):
-        return f"рассылка {self.pk}, отправлена {self.sending_time}(частота {self.frequency}, статус {self.status}"
+        return f"рассылка {self.name}, отправлена {self.start_time}(частота {self.frequency}, статус {self.status}"
 
 
     class Meta:
         verbose_name = "Рассылка"
         verbose_name_plural = "Рассылки"
-
-
-class Message(models.Model):
-    mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='Рассылка')
-    title = models.CharField(max_length=50, verbose_name='тема письма')
-    body = models.TextField(verbose_name='тело письма')
-
-    def __str__(self):
-        return f"Письмо {self.title}"
-
-    class Meta:
-        verbose_name = "Сообщение"
-        verbose_name_plural = "Сообщения"
 
 
 class MailingLogs(models.Model):
