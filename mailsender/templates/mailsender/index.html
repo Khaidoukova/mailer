@@ -9,8 +9,13 @@
         <div class="buttons">
 
             <p class="lead">
+                {% if user.is_authenticated %}
                 <a class="btn btn-primary btn-lg" href="{% url 'mailsender:create_client' %}" role="button">Добавить клиента</a>
                 <a class="btn btn-primary btn-lg" href="{% url 'mailsender:create_mailing' %}" role="button">Создать рассылку</a>
+                {% else %}
+                <a class="btn btn-primary btn-lg" href="{% url 'users:login' %}" role="button">Добавить клиента</a>
+                <a class="btn btn-primary btn-lg" href="{% url 'users:login' %}" role="button">Создать рассылку</a>
+                {% endif %}
 
             </p>
         </div>
