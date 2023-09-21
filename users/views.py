@@ -37,6 +37,7 @@ class RegisterView(CreateView):
         )
         return redirect(self.success_url)
 
+
 class ProfileView(UpdateView):
     model = User
     form_class = UserForm
@@ -44,6 +45,13 @@ class ProfileView(UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+    def test_func(self):
+        user = self.request.user
+        object = self.get_object()
+        if user.is_superuser or user.email == object.email:
+            return True
+        return False
 
 
 class UserDetailView(DetailView):

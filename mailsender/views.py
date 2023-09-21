@@ -51,31 +51,21 @@ class ClientDeleteView(DeleteView):
 class MailingListView(ListView):
     model = Mailing
 
-    def get_queryset(self, *args, **kwargs):
-        # user = self.request.user
-        queryset = super().get_queryset(*args, **kwargs)
-
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            queryset = super().get_queryset()
+        else:
+            queryset = super().get_queryset().filter(
+                owner=user.pk
+            )
         return queryset
 
 
-class MailingUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin, UpdateView):
+class MailingUpdateView(LoginRequiredMixin, UpdateView):
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailsender:index')
-    permission_required = 'mailsender.change_mailing'
-
-    def test_func(self):
-        user = self.request.user
-        mailing = self.get_object()
-        if mailing.owner == user:
-            return True
-        else:
-            return False
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['owner'] = self.request.user
-        return kwargs
 
 
 class MailingCreateView(CreateView):
@@ -96,19 +86,26 @@ class MailingDeleteView(DeleteView):
     success_url = reverse_lazy('mailsender:index')
 
 
-class MailingLogsView(ListView):
+class MailingDetailView(DetailView):
+    model = Mailing
+
+
+class MailingLogsView(LoginRequiredMixin, ListView):
     model = MailingLogs
+    template_name = 'mailsender/mailinglog_list.html'
 
     def get_queryset(self, *args, **kwargs):
         queryset = super().get_queryset(*args, **kwargs)
         return queryset
 
 
-class MailingManagerUpdateView(LoginRequiredMixin, UpdateView):
-
-    template_name = 'mailsender/mailing_manager_form.html'
+class MailingManagerUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Mailing
     form_class = ManagerUpdateForm
-    success_url = reverse_lazy('mail:mailing_list')
+    success_url = reverse_lazy('mailsender:mailing_list')
+    permission_required = 'mailsender.change_mailing_status'
+
+
+
 
 
