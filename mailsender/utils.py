@@ -27,12 +27,12 @@ def send_mailing():
 
     # mailing_to_send = Mailing.objects.filter(status='created').filter(next_start__lte=datetime.today())
     mailing_to_send = Mailing.objects.all()
-    print(mailing_to_send)
+    #print(mailing_to_send)
     for mailing in mailing_to_send:
         if mailing.get_status() == 'running':
-            print(mailing.frequency)
+            #print(mailing.frequency)
             clients = [client.email for client in Client.objects.filter(mailing=mailing.pk)]
-            print(clients)
+            #print(clients)
             try:
                 result = send_mail(
                     subject=mailing.title,
@@ -48,10 +48,14 @@ def send_mailing():
                 status = 'ok'
             else:
                 status = 'failed'
-            mailing_log = MailingLogs.objects.create(mailing=mailing, status=status)
+            mailing_log = MailingLogs.objects.create(mailing=mailing)
+            mailing_log.status = status
+            mailing_log.last_try = now
+            print(mailing_log.status)
             mailing.status = 'created'
             mailing.next_start = get_next_date(mailing.frequency, mailing.next_start)
             mailing.save()
             mailing_log.save()
+
 
 

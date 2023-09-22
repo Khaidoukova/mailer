@@ -14,7 +14,6 @@
                             <th>№</th>
                             <th>Рассылка</th>
                             <th>Время последней попытки</th>
-                            <th>Клиент</th>
                             <th>Статус попытки</th>
 
                         </tr>
@@ -25,7 +24,7 @@
                                 <td>{{ forloop.counter }}</td>
                                 <td>{{ object.mailing.name }}</td>
                                 <td>{{ object.last_try }}</td>
-                                <td>{{ object.client }}</td>
+
 
                                 {% if object.status == 'ok' %}
                                     <td class="text-success">{{ object.status }}</td>
@@ -38,7 +37,7 @@
                         </tbody>
                     </table>
                 <br>
-                <p align="center">Еще не было запущено ни одной рассылки</p>
+
 
             </div>
         </div>

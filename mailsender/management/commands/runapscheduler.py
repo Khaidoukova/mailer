@@ -14,13 +14,7 @@ from mailsender.utils import send_mailing
 logger = logging.getLogger(__name__)
 
 
-def my_job():
-    print("this function runs every 10 seconds")
 
-
-# The `close_old_connections` decorator ensures that database connections, that have become
-# unusable or are obsolete, are closed before and after your job has run. You should use it
-# to wrap any jobs that you schedule that access the Django database in any way.
 @util.close_old_connections
 def delete_old_job_executions(max_age=604_800):
     """

@@ -15,7 +15,7 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
 
     class Meta:
         model = Mailing
-        fields = ('name', 'next_start', 'start_time', 'stop_time', 'frequency', 'status', 'client')
+        fields = ('name', 'title', 'body', 'next_start', 'start_time', 'stop_time', 'frequency', 'status', 'client')
 
 
 class ClientForm(StyleFormMixin, forms.ModelForm):
