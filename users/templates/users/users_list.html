@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %}
+{% extends 'mailsender/base.html' %}
 
 {% block content %}
 <div class="container mt-4">
@@ -11,8 +11,10 @@
                     <h5 class="card-title">{{ user.name }} </h5>
                     <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
 
-                    <p class="card-text"><strong>Статус:</strong> {% if user.is_active %}Активен{% else %}Заблокирован{% endif %}</p>
-                    <a href="{% url 'users:detail' user.pk %}" class="btn btn-primary">Подробнее</a>
+                    <p class="card-text"><strong>Статус:</strong> {% if user.STATUS_ACTIVE %}Активен{% else %}Заблокирован{% endif %}</p>
+                    {% if perms.users.block_another_user %}
+                    <a href="{% url 'users:user_update' user.pk %}" class="btn btn-primary">Изменить статус пользователя</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

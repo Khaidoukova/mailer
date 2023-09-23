@@ -3,7 +3,7 @@ from django.urls import path
 from mailsender.apps import MailsenderConfig
 from mailsender.views import MailingListView, ClientCreateView, MailingCreateView, IndexView, \
     ClientUpdateView, MailingUpdateView, MailingDeleteView, ClientDeleteView, MailingDetailView, MailingLogsView, \
-    MailingManagerUpdateView, mailing_logs
+    MailingManagerUpdateView # mailing_logs
 
 app_name = MailsenderConfig.name
 

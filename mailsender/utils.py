@@ -8,8 +8,8 @@ from dateutil.relativedelta import relativedelta
 
 
 def get_next_date(repeat, old_date):
-    print(repeat)
-    print(old_date)
+    # print(repeat)
+    # print(old_date)
     next_date = None
     if repeat == 'daily':
         next_date = old_date + timedelta(days=1)
@@ -17,22 +17,20 @@ def get_next_date(repeat, old_date):
         next_date = old_date + timedelta(weeks=1)
     elif repeat == 'monthly':
         next_date = old_date + relativedelta(months=1)
-    print(next_date)
+    # print(next_date)
     return next_date
 
 
-
 def send_mailing():
-    now = timezone.now().time()
+    now = timezone.now()
 
-    # mailing_to_send = Mailing.objects.filter(status='created').filter(next_start__lte=datetime.today())
     mailing_to_send = Mailing.objects.all()
-    #print(mailing_to_send)
+    # print(mailing_to_send)
     for mailing in mailing_to_send:
         if mailing.get_status() == 'running':
-            #print(mailing.frequency)
+            # print(mailing.frequency)
             clients = [client.email for client in Client.objects.filter(mailing=mailing.pk)]
-            #print(clients)
+            # print(clients)
             try:
                 result = send_mail(
                     subject=mailing.title,
@@ -51,7 +49,6 @@ def send_mailing():
             mailing_log = MailingLogs.objects.create(mailing=mailing)
             mailing_log.status = status
             mailing_log.last_try = now
-            print(mailing_log.status)
             mailing.status = 'created'
             mailing.next_start = get_next_date(mailing.frequency, mailing.next_start)
             mailing.save()

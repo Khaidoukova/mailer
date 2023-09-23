@@ -57,7 +57,7 @@ class Mailing(models.Model):
 
 
     def __str__(self):
-        return f"рассылка {self.name}, отправлена {self.start_time}(частота {self.frequency}, статус {self.status}"
+        return f"{self.name}"
 
 
     class Meta:
@@ -76,8 +76,11 @@ class MailingLogs(models.Model):
     ]
 
     mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE, verbose_name='Рассылка')
-    last_try = models.DateTimeField(verbose_name='дата и время последней попытки', null=True, blank=True),
-    status = models.CharField(max_length=15, choices=STATUSES, verbose_name='статус попытки'),
+    last_try = models.DateTimeField(verbose_name='дата и время последней попытки', null=True, blank=True)
+    status = models.CharField(max_length=15, choices=STATUSES, default='ok', verbose_name='статус попытки')
+
+    def __str__(self):
+        return self.last_try
 
 
     class Meta:

@@ -63,12 +63,6 @@ class MailingListView(ListView):
         return queryset
 
 
-class MailingUpdateView(LoginRequiredMixin, UpdateView):
-    model = Mailing
-    form_class = MailingForm
-    success_url = reverse_lazy('mailsender:index')
-
-
 class MailingCreateView(CreateView):
     model = Mailing
     form_class = MailingForm
@@ -80,6 +74,12 @@ class MailingCreateView(CreateView):
         self.object.save()
 
         return super().form_valid(form)
+
+
+class MailingUpdateView(LoginRequiredMixin, UpdateView):
+    model = Mailing
+    form_class = MailingForm
+    success_url = reverse_lazy('mailsender:index')
 
 
 class MailingDeleteView(DeleteView):
@@ -107,21 +107,6 @@ class MailingManagerUpdateView(LoginRequiredMixin, PermissionRequiredMixin, Upda
     permission_required = 'mailsender.change_mailing_status'
 
 
-@login_required
-def mailing_logs(request, mailing_id):
-    print(mailing_id)
-    mailing = get_object_or_404(Mailing, pk=mailing_id)
-    logs = MailingLogs.objects.filter(log_mailing=mailing).order_by('-created_time')
-
-    if (mailing.owner == request.user or request.user.is_superuser
-            or request.user.groups.filter(name='manager').exists()):
-        context = {
-            'mailing': mailing,
-            'logs': logs,
-        }
-        return render(request, 'mailsender:mailinglogs', context)
-    else:
-        return redirect('mailsender:mailing_list')
 
 
 

@@ -37,25 +37,13 @@ class Command(BaseCommand):
 
         scheduler.add_job(
             send_mailing, # изменить на свою функцию запуска сообщений
-            trigger=CronTrigger(second="*/05"),  # Every 10 seconds
+            trigger=CronTrigger(hour="15", minute="56", second="00"),  # Run every day at 15.56 local time
             id="my_job",  # The `id` assigned to each job MUST be unique
             max_instances=1,
             replace_existing=True,
         )
         print("Added job 'my_job'.")
 
-        # #scheduler.add_job(
-        #     delete_old_job_executions,
-        #     trigger=CronTrigger(
-        #         day_of_week="mon", hour="00", minute="00"
-        #     ),  # Midnight on Monday, before start of the next work week.
-        #     id="delete_old_job_executions",
-        #     max_instances=1,
-        #     replace_existing=True,
-        # )
-        # print(
-        #     "Added weekly job: 'delete_old_job_executions'."
-        # )
 
         try:
             print("Starting scheduler...")

@@ -1,18 +1,26 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 from django.core.mail import send_mail
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
-from django.views.generic import UpdateView, CreateView, DetailView
+from django.views.generic import UpdateView, CreateView, DetailView, ListView
 
 from config import settings
-from users.forms import UserForm, UserRegisterForm
+from users.forms import UserForm, UserRegisterForm, UserStatusForm
 from users.models import User
 
 
-class UserUpdateView(LoginRequiredMixin, UpdateView):
+class UsersListView(LoginRequiredMixin,PermissionRequiredMixin, ListView):
     model = User
-    success_url = reverse_lazy('users:profile')
-    form_class = UserForm
+    permission_required = 'users.view_user'
+    template_name = 'users/users_list.html'
+
+
+class UserUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
+    model = User
+    template_name = 'users/user_update.html'
+    success_url = reverse_lazy('users:users_list')
+    form_class = UserStatusForm
+    permission_required = 'users.block_another_user'
 
     def get_object(self, queryset=None):
         return self.request.user
@@ -63,7 +71,7 @@ class UserDetailView(DetailView):
 
 def verify_email(request, key):
     user = get_object_or_404(User, email_confirm_key=key)
-    user.is_active = True
+    user.status = 'active'
     user.email_confirm_key = ''
     user.save()
     return redirect('users:login')
