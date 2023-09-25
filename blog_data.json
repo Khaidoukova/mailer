@@ -1,0 +1,35 @@
+[
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "de Finibus Bonorum et Malorum",
+      "body": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
+      "preview": "",
+      "date": "2023-09-25T08:48:01.860Z",
+      "views_count": 1
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 2,
+    "fields": {
+      "title": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta massa sed quam maximus pulvinar. Suspendisse volutpat nunc massa, non pulvinar mi sodales in. In porttitor eget nibh quis cursus. Curabitur tempor accumsan venenatis. Maecenas ac enim ex. In hac habitasse platea dictumst. Phasellus elementum tortor molestie, vehicula sem quis, viverra leo. Suspendisse quam est, tempor ut nibh elementum, pharetra molestie urna. Fusce scelerisque blandit metus sit amet malesuada. Vestibulum pellentesque nibh vel dolor tristique, dapibus aliquam justo luctus. Maecenas et ante maximus, consectetur ante a, scelerisque risus.\r\n\r\nNullam pharetra mattis lorem nec dapibus. Fusce hendrerit massa orci, nec blandit velit dapibus a. Sed aliquet, velit in ullamcorper imperdiet, velit massa lacinia justo, quis dignissim orci purus ut purus. Morbi tincidunt diam sed libero posuere, eget eleifend est euismod. Sed laoreet semper quam, ac elementum nunc dignissim id. Praesent luctus, urna vel faucibus molestie, libero neque elementum lectus, ut scelerisque tortor quam in urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque finibus felis sit amet tellus ullamcorper, nec consectetur nisl dictum. Pellentesque vitae cursus lectus. Integer et consectetur leo. Duis et tempus tortor. Sed rhoncus tincidunt lacinia.\r\n\r\nEtiam arcu metus, commodo in suscipit et, volutpat sed turpis. Maecenas aliquet a odio vel elementum. Praesent iaculis porttitor leo eget lobortis. Suspendisse elementum, neque nec pulvinar ornare, mi nulla pretium mauris, vel consectetur ipsum lectus eu tortor. Suspendisse elementum felis ut condimentum iaculis. Maecenas sed turpis eleifend, mollis nisl vehicula, pulvinar eros. Nulla placerat, dolor ut consectetur interdum, neque velit ullamcorper mauris, at molestie urna metus vitae lectus. Mauris placerat dictum vestibulum. Aenean semper, neque ut tempor vestibulum, ligula libero rhoncus nisi, blandit accumsan urna sem id erat. Etiam nec quam ut purus sodales placerat. Cras nec lacinia nisl. Nulla viverra dignissim ligula sed dictum. Aenean tincidunt consequat mauris eget tincidunt. Nunc eget tincidunt ex. Curabitur suscipit sed velit sit amet commodo. Fusce molestie semper felis a porta.",
+      "preview": "",
+      "date": "2023-09-25T08:50:03.572Z",
+      "views_count": 0
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "Откуда он появился?",
+      "body": "Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, \"consectetur\", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги \"de Finibus Bonorum et Malorum\" (\"О пределах добра и зла\"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", происходит от одной из строк в разделе 1.10.32\r\n\r\nКлассический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и 1.10.33 \"de Finibus Bonorum et Malorum\" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.\r\n\r\nГде его взять?\r\nЕсть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или \"невозможных\" слов.",
+      "preview": "",
+      "date": "2023-09-25T08:51:01.379Z",
+      "views_count": 0
+    }
+  }
+]

@@ -1,1 +1,845 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2023-09-25T09:26:45.152Z", "user": 1, "content_type": 9, "object_id": "3", "object_repr": "kou@noran.ru", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2023-09-25T09:26:45.160Z", "user": 1, "content_type": 9, "object_id": "2", "object_repr": "olga@noran.ru", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2023-09-25T09:29:55.060Z", "user": 1, "content_type": 9, "object_id": "4", "object_repr": "olga@noran.ru", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2023-09-25T09:36:15.130Z", "user": 1, "content_type": 3, "object_id": "1", "object_repr": "Managers", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2023-09-25T09:36:32.719Z", "user": 1, "content_type": 9, "object_id": "5", "object_repr": "olga@noran.ru", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2023-09-25T10:20:21.481Z", "user": 1, "content_type": 9, "object_id": "7", "object_repr": "kou@noran.ru", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2023-09-25T10:21:03.608Z", "user": 1, "content_type": 9, "object_id": "7", "object_repr": "kou@noran.ru", "action_flag": 2, "change_message": "[]"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view permission", "content_type": 2, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view group", "content_type": 3, "codename": "view_group"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add content type", "content_type": 4, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change content type", "content_type": 4, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete content type", "content_type": 4, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view content type", "content_type": 4, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add session", "content_type": 5, "codename": "add_session"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change session", "content_type": 5, "codename": "change_session"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete session", "content_type": 5, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view session", "content_type": 5, "codename": "view_session"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add Получатель", "content_type": 6, "codename": "add_client"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change Получатель", "content_type": 6, "codename": "change_client"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete Получатель", "content_type": 6, "codename": "delete_client"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view Получатель", "content_type": 6, "codename": "view_client"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add Рассылка", "content_type": 7, "codename": "add_mailing"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change Рассылка", "content_type": 7, "codename": "change_mailing"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete Рассылка", "content_type": 7, "codename": "delete_mailing"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view Рассылка", "content_type": 7, "codename": "view_mailing"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can change mailing status", "content_type": 7, "codename": "change_mailing_status"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can add Лог", "content_type": 8, "codename": "add_mailinglogs"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can change Лог", "content_type": 8, "codename": "change_mailinglogs"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can delete Лог", "content_type": 8, "codename": "delete_mailinglogs"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can view Лог", "content_type": 8, "codename": "view_mailinglogs"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can add пользователь", "content_type": 9, "codename": "add_user"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can change пользователь", "content_type": 9, "codename": "change_user"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can delete пользователь", "content_type": 9, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can view пользователь", "content_type": 9, "codename": "view_user"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can block another user", "content_type": 9, "codename": "block_another_user"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can add django job", "content_type": 10, "codename": "add_djangojob"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can change django job", "content_type": 10, "codename": "change_djangojob"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can delete django job", "content_type": 10, "codename": "delete_djangojob"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can view django job", "content_type": 10, "codename": "view_djangojob"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can add django job execution", "content_type": 11, "codename": "add_djangojobexecution"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can change django job execution", "content_type": 11, "codename": "change_djangojobexecution"}}, {"model": "auth.permission", "pk": 45, "fields": {"name": "Can delete django job execution", "content_type": 11, "codename": "delete_djangojobexecution"}}, {"model": "auth.permission", "pk": 46, "fields": {"name": "Can view django job execution", "content_type": 11, "codename": "view_djangojobexecution"}}, {"model": "auth.permission", "pk": 47, "fields": {"name": "Can add статья", "content_type": 12, "codename": "add_blog"}}, {"model": "auth.permission", "pk": 48, "fields": {"name": "Can change статья", "content_type": 12, "codename": "change_blog"}}, {"model": "auth.permission", "pk": 49, "fields": {"name": "Can delete статья", "content_type": 12, "codename": "delete_blog"}}, {"model": "auth.permission", "pk": 50, "fields": {"name": "Can view статья", "content_type": 12, "codename": "view_blog"}}, {"model": "auth.group", "pk": 1, "fields": {"name": "Managers", "permissions": [29, 28, 38, 37]}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "mailsender", "model": "client"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "mailsender", "model": "mailing"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "mailsender", "model": "mailinglogs"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "users", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "django_apscheduler", "model": "djangojob"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "django_apscheduler", "model": "djangojobexecution"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "blog", "model": "blog"}}, {"model": "sessions.session", "pk": "9irxtn7kbdxdx97sibr15ydi0cmenmyg", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hBaoFCX7j0DmWFmpGpoUtqV8e7apAvd_vfef6kE21rS1nhJE6mz6tTpd0PID647oDvU26zzXNdlQr0r-qBNX2fi5-Vw_w4KtPKts_XUBdOPGN0oJKNHQUcWOQYMA_dGkHNgAk9mIOfFAdguoBGJ0ot6fwAE7Tkt:1qkjzs:dZfIYoWi9QBvmH56DFHjvzrFThCNMMsnumrxfwlU3pI", "expire_date": "2023-10-09T11:43:28.298Z"}}, {"model": "mailsender.client", "pk": 1, "fields": {"email": "khaidoukova@inbox.ru", "name": "Ольга", "comment": "Просто хороший человек", "owner": 1}}, {"model": "mailsender.client", "pk": 2, "fields": {"email": "olga@noran.ru", "name": "Ольга", "comment": "Еще один хороший человек", "owner": 1}}, {"model": "mailsender.client", "pk": 3, "fields": {"email": "khaidoukova@inbox.ru", "name": "Ольга", "comment": "", "owner": 1}}, {"model": "mailsender.mailing", "pk": 1, "fields": {"name": "Рассылка для хороших людей", "start_time": "09:01:59", "next_start": "2023-09-25", "stop_time": "19:01:59", "frequency": "daily", "status": "created", "title": "Добрый день!", "body": "Просто пожелание хорошего дня.", "is_active": true, "owner": 1, "client": [1]}}, {"model": "mailsender.mailing", "pk": 2, "fields": {"name": "Еще одна рассылка", "start_time": "09:03:30", "next_start": "2023-09-25", "stop_time": "19:03:30", "frequency": "daily", "status": "created", "title": "Просто так", "body": "Еще одна рассылка для хороших людей", "is_active": true, "owner": 1, "client": [2]}}, {"model": "users.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$600000$XOpwGa4vG0cAlddVvxbMQR$JUAYcUdoie1el5z4KaFXjB+9yOGOWebQHbOkbnoRN8g=", "last_login": "2023-09-25T11:43:28.287Z", "is_superuser": true, "first_name": "Olga", "last_name": "Olga", "is_staff": true, "is_active": true, "date_joined": "2023-09-22T08:41:27.730Z", "email": "khaidoukova2015@yandex.ru", "email_is_confirmed": false, "email_confirm_key": null, "status": "blocked", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 5, "fields": {"password": "pbkdf2_sha256$600000$qxqYgiWXtXGXj35yIRXpoV$LpLcPMHkapyGkZqv1M5Go8zsLxOKij3XLk8ofvAjU/4=", "last_login": "2023-09-25T09:55:46.555Z", "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2023-09-25T09:30:20Z", "email": "olga@noran.ru", "email_is_confirmed": false, "email_confirm_key": null, "status": "active", "groups": [1], "user_permissions": []}}, {"model": "users.user", "pk": 6, "fields": {"password": "pbkdf2_sha256$600000$EqrXnk9Np2z3I4WusGKEVd$yNnZuwRh/lI1Mwz5eiOc/rHQnrK8Tiy780eN3+gkU1s=", "last_login": "2023-09-25T09:55:28.394Z", "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2023-09-25T09:54:59.411Z", "email": "khaidoukova@inbox.ru", "email_is_confirmed": false, "email_confirm_key": "", "status": "active", "groups": [], "user_permissions": []}}, {"model": "users.user", "pk": 7, "fields": {"password": "pbkdf2_sha256$600000$7ECR8MB1RNq7WmawbTsWgj$/sJlgdi7/hww+JmQ6VdFyHUsSIVXRGxE9VGkWW0JTeo=", "last_login": "2023-09-25T10:25:25.826Z", "is_superuser": false, "first_name": "", "last_name": "", "is_staff": false, "is_active": true, "date_joined": "2023-09-25T10:19:29Z", "email": "kou@noran.ru", "email_is_confirmed": false, "email_confirm_key": null, "status": "active", "groups": [1], "user_permissions": []}}, {"model": "blog.blog", "pk": 1, "fields": {"title": "de Finibus Bonorum et Malorum", "body": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"", "preview": "", "date": "2023-09-25T08:48:01.860Z", "views_count": 1}}, {"model": "blog.blog", "pk": 2, "fields": {"title": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta massa sed quam maximus pulvinar. Suspendisse volutpat nunc massa, non pulvinar mi sodales in. In porttitor eget nibh quis cursus. Curabitur tempor accumsan venenatis. Maecenas ac enim ex. In hac habitasse platea dictumst. Phasellus elementum tortor molestie, vehicula sem quis, viverra leo. Suspendisse quam est, tempor ut nibh elementum, pharetra molestie urna. Fusce scelerisque blandit metus sit amet malesuada. Vestibulum pellentesque nibh vel dolor tristique, dapibus aliquam justo luctus. Maecenas et ante maximus, consectetur ante a, scelerisque risus.\r\n\r\nNullam pharetra mattis lorem nec dapibus. Fusce hendrerit massa orci, nec blandit velit dapibus a. Sed aliquet, velit in ullamcorper imperdiet, velit massa lacinia justo, quis dignissim orci purus ut purus. Morbi tincidunt diam sed libero posuere, eget eleifend est euismod. Sed laoreet semper quam, ac elementum nunc dignissim id. Praesent luctus, urna vel faucibus molestie, libero neque elementum lectus, ut scelerisque tortor quam in urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque finibus felis sit amet tellus ullamcorper, nec consectetur nisl dictum. Pellentesque vitae cursus lectus. Integer et consectetur leo. Duis et tempus tortor. Sed rhoncus tincidunt lacinia.\r\n\r\nEtiam arcu metus, commodo in suscipit et, volutpat sed turpis. Maecenas aliquet a odio vel elementum. Praesent iaculis porttitor leo eget lobortis. Suspendisse elementum, neque nec pulvinar ornare, mi nulla pretium mauris, vel consectetur ipsum lectus eu tortor. Suspendisse elementum felis ut condimentum iaculis. Maecenas sed turpis eleifend, mollis nisl vehicula, pulvinar eros. Nulla placerat, dolor ut consectetur interdum, neque velit ullamcorper mauris, at molestie urna metus vitae lectus. Mauris placerat dictum vestibulum. Aenean semper, neque ut tempor vestibulum, ligula libero rhoncus nisi, blandit accumsan urna sem id erat. Etiam nec quam ut purus sodales placerat. Cras nec lacinia nisl. Nulla viverra dignissim ligula sed dictum. Aenean tincidunt consequat mauris eget tincidunt. Nunc eget tincidunt ex. Curabitur suscipit sed velit sit amet commodo. Fusce molestie semper felis a porta.", "preview": "", "date": "2023-09-25T08:50:03.572Z", "views_count": 0}}, {"model": "blog.blog", "pk": 3, "fields": {"title": "Откуда он появился?", "body": "Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, \"consectetur\", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги \"de Finibus Bonorum et Malorum\" (\"О пределах добра и зла\"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", происходит от одной из строк в разделе 1.10.32\r\n\r\nКлассический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и 1.10.33 \"de Finibus Bonorum et Malorum\" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.\r\n\r\nГде его взять?\r\nЕсть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или \"невозможных\" слов.", "preview": "", "date": "2023-09-25T08:51:01.379Z", "views_count": 0}}]
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-09-25T09:26:45.152Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "kou@noran.ru",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-09-25T09:26:45.160Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "olga@noran.ru",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-09-25T09:29:55.060Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "olga@noran.ru",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-09-25T09:36:15.130Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "Managers",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-09-25T09:36:32.719Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "5",
+      "object_repr": "olga@noran.ru",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-09-25T10:20:21.481Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "7",
+      "object_repr": "kou@noran.ru",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-09-25T10:21:03.608Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "7",
+      "object_repr": "kou@noran.ru",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add РџРѕР»СѓС‡Р°С‚РµР»СЊ",
+      "content_type": 6,
+      "codename": "add_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change РџРѕР»СѓС‡Р°С‚РµР»СЊ",
+      "content_type": 6,
+      "codename": "change_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete РџРѕР»СѓС‡Р°С‚РµР»СЊ",
+      "content_type": 6,
+      "codename": "delete_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view РџРѕР»СѓС‡Р°С‚РµР»СЊ",
+      "content_type": 6,
+      "codename": "view_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add Р Р°СЃСЃС‹Р»РєР°",
+      "content_type": 7,
+      "codename": "add_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change Р Р°СЃСЃС‹Р»РєР°",
+      "content_type": 7,
+      "codename": "change_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete Р Р°СЃСЃС‹Р»РєР°",
+      "content_type": 7,
+      "codename": "delete_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view Р Р°СЃСЃС‹Р»РєР°",
+      "content_type": 7,
+      "codename": "view_mailing"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can change mailing status",
+      "content_type": 7,
+      "codename": "change_mailing_status"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can add Р›РѕРі",
+      "content_type": 8,
+      "codename": "add_mailinglogs"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can change Р›РѕРі",
+      "content_type": 8,
+      "codename": "change_mailinglogs"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can delete Р›РѕРі",
+      "content_type": 8,
+      "codename": "delete_mailinglogs"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can view Р›РѕРі",
+      "content_type": 8,
+      "codename": "view_mailinglogs"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can add РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ",
+      "content_type": 9,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can change РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ",
+      "content_type": 9,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can delete РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ",
+      "content_type": 9,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can view РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ",
+      "content_type": 9,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can block another user",
+      "content_type": 9,
+      "codename": "block_another_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can add django job",
+      "content_type": 10,
+      "codename": "add_djangojob"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can change django job",
+      "content_type": 10,
+      "codename": "change_djangojob"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can delete django job",
+      "content_type": 10,
+      "codename": "delete_djangojob"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can view django job",
+      "content_type": 10,
+      "codename": "view_djangojob"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can add django job execution",
+      "content_type": 11,
+      "codename": "add_djangojobexecution"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can change django job execution",
+      "content_type": 11,
+      "codename": "change_djangojobexecution"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can delete django job execution",
+      "content_type": 11,
+      "codename": "delete_djangojobexecution"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can view django job execution",
+      "content_type": 11,
+      "codename": "view_djangojobexecution"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can add СЃС‚Р°С‚СЊСЏ",
+      "content_type": 12,
+      "codename": "add_blog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can change СЃС‚Р°С‚СЊСЏ",
+      "content_type": 12,
+      "codename": "change_blog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can delete СЃС‚Р°С‚СЊСЏ",
+      "content_type": 12,
+      "codename": "delete_blog"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can view СЃС‚Р°С‚СЊСЏ",
+      "content_type": 12,
+      "codename": "view_blog"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Managers",
+      "permissions": [
+        29,
+        28,
+        38,
+        37
+      ]
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "mailsender",
+      "model": "client"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "mailsender",
+      "model": "mailing"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "mailsender",
+      "model": "mailinglogs"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "users",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "django_apscheduler",
+      "model": "djangojob"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "django_apscheduler",
+      "model": "djangojobexecution"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "blog",
+      "model": "blog"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "9irxtn7kbdxdx97sibr15ydi0cmenmyg",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hBaoFCX7j0DmWFmpGpoUtqV8e7apAvd_vfef6kE21rS1nhJE6mz6tTpd0PID647oDvU26zzXNdlQr0r-qBNX2fi5-Vw_w4KtPKts_XUBdOPGN0oJKNHQUcWOQYMA_dGkHNgAk9mIOfFAdguoBGJ0ot6fwAE7Tkt:1qkjzs:dZfIYoWi9QBvmH56DFHjvzrFThCNMMsnumrxfwlU3pI",
+      "expire_date": "2023-10-09T11:43:28.298Z"
+    }
+  },
+  {
+    "model": "mailsender.client",
+    "pk": 1,
+    "fields": {
+      "email": "khaidoukova@inbox.ru",
+      "name": "РћР»СЊРіР°",
+      "comment": "РџСЂРѕСЃС‚Рѕ С…РѕСЂРѕС€РёР№ С‡РµР»РѕРІРµРє",
+      "owner": 1
+    }
+  },
+  {
+    "model": "mailsender.client",
+    "pk": 2,
+    "fields": {
+      "email": "olga@noran.ru",
+      "name": "РћР»СЊРіР°",
+      "comment": "Р•С‰Рµ РѕРґРёРЅ С…РѕСЂРѕС€РёР№ С‡РµР»РѕРІРµРє",
+      "owner": 1
+    }
+  },
+  {
+    "model": "mailsender.client",
+    "pk": 3,
+    "fields": {
+      "email": "khaidoukova@inbox.ru",
+      "name": "РћР»СЊРіР°",
+      "comment": "",
+      "owner": 1
+    }
+  },
+  {
+    "model": "mailsender.mailing",
+    "pk": 1,
+    "fields": {
+      "name": "Р Р°СЃСЃС‹Р»РєР° РґР»СЏ С…РѕСЂРѕС€РёС… Р»СЋРґРµР№",
+      "start_time": "09:01:59",
+      "next_start": "2023-09-25",
+      "stop_time": "19:01:59",
+      "frequency": "daily",
+      "status": "created",
+      "title": "Р”РѕР±СЂС‹Р№ РґРµРЅСЊ!",
+      "body": "РџСЂРѕСЃС‚Рѕ РїРѕР¶РµР»Р°РЅРёРµ С…РѕСЂРѕС€РµРіРѕ РґРЅСЏ.",
+      "is_active": true,
+      "owner": 1,
+      "client": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "mailsender.mailing",
+    "pk": 2,
+    "fields": {
+      "name": "Р•С‰Рµ РѕРґРЅР° СЂР°СЃСЃС‹Р»РєР°",
+      "start_time": "09:03:30",
+      "next_start": "2023-09-25",
+      "stop_time": "19:03:30",
+      "frequency": "daily",
+      "status": "created",
+      "title": "РџСЂРѕСЃС‚Рѕ С‚Р°Рє",
+      "body": "Р•С‰Рµ РѕРґРЅР° СЂР°СЃСЃС‹Р»РєР° РґР»СЏ С…РѕСЂРѕС€РёС… Р»СЋРґРµР№",
+      "is_active": true,
+      "owner": 1,
+      "client": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$XOpwGa4vG0cAlddVvxbMQR$JUAYcUdoie1el5z4KaFXjB+9yOGOWebQHbOkbnoRN8g=",
+      "last_login": "2023-09-25T11:43:28.287Z",
+      "is_superuser": true,
+      "first_name": "Olga",
+      "last_name": "Olga",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-09-22T08:41:27.730Z",
+      "email": "khaidoukova2015@yandex.ru",
+      "email_is_confirmed": false,
+      "email_confirm_key": null,
+      "status": "blocked",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$qxqYgiWXtXGXj35yIRXpoV$LpLcPMHkapyGkZqv1M5Go8zsLxOKij3XLk8ofvAjU/4=",
+      "last_login": "2023-09-25T09:55:46.555Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-09-25T09:30:20Z",
+      "email": "olga@noran.ru",
+      "email_is_confirmed": false,
+      "email_confirm_key": null,
+      "status": "active",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$EqrXnk9Np2z3I4WusGKEVd$yNnZuwRh/lI1Mwz5eiOc/rHQnrK8Tiy780eN3+gkU1s=",
+      "last_login": "2023-09-25T09:55:28.394Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-09-25T09:54:59.411Z",
+      "email": "khaidoukova@inbox.ru",
+      "email_is_confirmed": false,
+      "email_confirm_key": "",
+      "status": "active",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$7ECR8MB1RNq7WmawbTsWgj$/sJlgdi7/hww+JmQ6VdFyHUsSIVXRGxE9VGkWW0JTeo=",
+      "last_login": "2023-09-25T10:25:25.826Z",
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-09-25T10:19:29Z",
+      "email": "kou@noran.ru",
+      "email_is_confirmed": false,
+      "email_confirm_key": null,
+      "status": "active",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "de Finibus Bonorum et Malorum",
+      "body": "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"",
+      "preview": "",
+      "date": "2023-09-25T08:48:01.860Z",
+      "views_count": 1
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 2,
+    "fields": {
+      "title": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta massa sed quam maximus pulvinar. Suspendisse volutpat nunc massa, non pulvinar mi sodales in. In porttitor eget nibh quis cursus. Curabitur tempor accumsan venenatis. Maecenas ac enim ex. In hac habitasse platea dictumst. Phasellus elementum tortor molestie, vehicula sem quis, viverra leo. Suspendisse quam est, tempor ut nibh elementum, pharetra molestie urna. Fusce scelerisque blandit metus sit amet malesuada. Vestibulum pellentesque nibh vel dolor tristique, dapibus aliquam justo luctus. Maecenas et ante maximus, consectetur ante a, scelerisque risus.\r\n\r\nNullam pharetra mattis lorem nec dapibus. Fusce hendrerit massa orci, nec blandit velit dapibus a. Sed aliquet, velit in ullamcorper imperdiet, velit massa lacinia justo, quis dignissim orci purus ut purus. Morbi tincidunt diam sed libero posuere, eget eleifend est euismod. Sed laoreet semper quam, ac elementum nunc dignissim id. Praesent luctus, urna vel faucibus molestie, libero neque elementum lectus, ut scelerisque tortor quam in urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque finibus felis sit amet tellus ullamcorper, nec consectetur nisl dictum. Pellentesque vitae cursus lectus. Integer et consectetur leo. Duis et tempus tortor. Sed rhoncus tincidunt lacinia.\r\n\r\nEtiam arcu metus, commodo in suscipit et, volutpat sed turpis. Maecenas aliquet a odio vel elementum. Praesent iaculis porttitor leo eget lobortis. Suspendisse elementum, neque nec pulvinar ornare, mi nulla pretium mauris, vel consectetur ipsum lectus eu tortor. Suspendisse elementum felis ut condimentum iaculis. Maecenas sed turpis eleifend, mollis nisl vehicula, pulvinar eros. Nulla placerat, dolor ut consectetur interdum, neque velit ullamcorper mauris, at molestie urna metus vitae lectus. Mauris placerat dictum vestibulum. Aenean semper, neque ut tempor vestibulum, ligula libero rhoncus nisi, blandit accumsan urna sem id erat. Etiam nec quam ut purus sodales placerat. Cras nec lacinia nisl. Nulla viverra dignissim ligula sed dictum. Aenean tincidunt consequat mauris eget tincidunt. Nunc eget tincidunt ex. Curabitur suscipit sed velit sit amet commodo. Fusce molestie semper felis a porta.",
+      "preview": "",
+      "date": "2023-09-25T08:50:03.572Z",
+      "views_count": 0
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "РћС‚РєСѓРґР° РѕРЅ РїРѕСЏРІРёР»СЃСЏ?",
+      "body": "РњРЅРѕРіРёРµ РґСѓРјР°СЋС‚, С‡С‚Рѕ Lorem Ipsum - РІР·СЏС‚С‹Р№ СЃ РїРѕС‚РѕР»РєР° РїСЃРµРІРґРѕ-Р»Р°С‚РёРЅСЃРєРёР№ РЅР°Р±РѕСЂ СЃР»РѕРІ, РЅРѕ СЌС‚Рѕ РЅРµ СЃРѕРІСЃРµРј С‚Р°Рє. Р•РіРѕ РєРѕСЂРЅРё СѓС…РѕРґСЏС‚ РІ РѕРґРёРЅ С„СЂР°РіРјРµРЅС‚ РєР»Р°СЃСЃРёС‡РµСЃРєРѕР№ Р»Р°С‚С‹РЅРё 45 РіРѕРґР° РЅ.СЌ., С‚Рѕ РµСЃС‚СЊ Р±РѕР»РµРµ РґРІСѓС… С‚С‹СЃСЏС‡РµР»РµС‚РёР№ РЅР°Р·Р°Рґ. Р РёС‡Р°СЂРґ РњР°РєРљР»РёРЅС‚РѕРє, РїСЂРѕС„РµСЃСЃРѕСЂ Р»Р°С‚С‹РЅРё РёР· РєРѕР»Р»РµРґР¶Р° Hampden-Sydney, С€С‚Р°С‚ Р’РёСЂРґР¶РёРЅРёСЏ, РІР·СЏР» РѕРґРЅРѕ РёР· СЃР°РјС‹С… СЃС‚СЂР°РЅРЅС‹С… СЃР»РѕРІ РІ Lorem Ipsum, \"consectetur\", Рё Р·Р°РЅСЏР»СЃСЏ РµРіРѕ РїРѕРёСЃРєР°РјРё РІ РєР»Р°СЃСЃРёС‡РµСЃРєРѕР№ Р»Р°С‚РёРЅСЃРєРѕР№ Р»РёС‚РµСЂР°С‚СѓСЂРµ. Р’ СЂРµР·СѓР»СЊС‚Р°С‚Рµ РѕРЅ РЅР°С€С‘Р» РЅРµРѕСЃРїРѕСЂРёРјС‹Р№ РїРµСЂРІРѕРёСЃС‚РѕС‡РЅРёРє Lorem Ipsum РІ СЂР°Р·РґРµР»Р°С… 1.10.32 Рё 1.10.33 РєРЅРёРіРё \"de Finibus Bonorum et Malorum\" (\"Рћ РїСЂРµРґРµР»Р°С… РґРѕР±СЂР° Рё Р·Р»Р°\"), РЅР°РїРёСЃР°РЅРЅРѕР№ Р¦РёС†РµСЂРѕРЅРѕРј РІ 45 РіРѕРґСѓ РЅ.СЌ. Р­С‚РѕС‚ С‚СЂР°РєС‚Р°С‚ РїРѕ С‚РµРѕСЂРёРё СЌС‚РёРєРё Р±С‹Р» РѕС‡РµРЅСЊ РїРѕРїСѓР»СЏСЂРµРЅ РІ СЌРїРѕС…Сѓ Р’РѕР·СЂРѕР¶РґРµРЅРёСЏ. РџРµСЂРІР°СЏ СЃС‚СЂРѕРєР° Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", РїСЂРѕРёСЃС…РѕРґРёС‚ РѕС‚ РѕРґРЅРѕР№ РёР· СЃС‚СЂРѕРє РІ СЂР°Р·РґРµР»Рµ 1.10.32\r\n\r\nРљР»Р°СЃСЃРёС‡РµСЃРєРёР№ С‚РµРєСЃС‚ Lorem Ipsum, РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ СЃ XVI РІРµРєР°, РїСЂРёРІРµРґС‘РЅ РЅРёР¶Рµ. РўР°РєР¶Рµ РґР°РЅС‹ СЂР°Р·РґРµР»С‹ 1.10.32 Рё 1.10.33 \"de Finibus Bonorum et Malorum\" Р¦РёС†РµСЂРѕРЅР° Рё РёС… Р°РЅРіР»РёР№СЃРєРёР№ РїРµСЂРµРІРѕРґ, СЃРґРµР»Р°РЅРЅС‹Р№ H. Rackham, 1914 РіРѕРґ.\r\n\r\nР“РґРµ РµРіРѕ РІР·СЏС‚СЊ?\r\nР•СЃС‚СЊ РјРЅРѕРіРѕ РІР°СЂРёР°РЅС‚РѕРІ Lorem Ipsum, РЅРѕ Р±РѕР»СЊС€РёРЅСЃС‚РІРѕ РёР· РЅРёС… РёРјРµРµС‚ РЅРµ РІСЃРµРіРґР° РїСЂРёРµРјР»РµРјС‹Рµ РјРѕРґРёС„РёРєР°С†РёРё, РЅР°РїСЂРёРјРµСЂ, СЋРјРѕСЂРёСЃС‚РёС‡РµСЃРєРёРµ РІСЃС‚Р°РІРєРё РёР»Рё СЃР»РѕРІР°, РєРѕС‚РѕСЂС‹Рµ РґР°Р¶Рµ РѕС‚РґР°Р»С‘РЅРЅРѕ РЅРµ РЅР°РїРѕРјРёРЅР°СЋС‚ Р»Р°С‚С‹РЅСЊ. Р•СЃР»Рё РІР°Рј РЅСѓР¶РµРЅ Lorem Ipsum РґР»СЏ СЃРµСЂСЊС‘Р·РЅРѕРіРѕ РїСЂРѕРµРєС‚Р°, РІС‹ РЅР°РІРµСЂРЅСЏРєР° РЅРµ С…РѕС‚РёС‚Рµ РєР°РєРѕР№-РЅРёР±СѓРґСЊ С€СѓС‚РєРё, СЃРєСЂС‹С‚РѕР№ РІ СЃРµСЂРµРґРёРЅРµ Р°Р±Р·Р°С†Р°. РўР°РєР¶Рµ РІСЃРµ РґСЂСѓРіРёРµ РёР·РІРµСЃС‚РЅС‹Рµ РіРµРЅРµСЂР°С‚РѕСЂС‹ Lorem Ipsum РёСЃРїРѕР»СЊР·СѓСЋС‚ РѕРґРёРЅ Рё С‚РѕС‚ Р¶Рµ С‚РµРєСЃС‚, РєРѕС‚РѕСЂС‹Р№ РѕРЅРё РїСЂРѕСЃС‚Рѕ РїРѕРІС‚РѕСЂСЏСЋС‚, РїРѕРєР° РЅРµ РґРѕСЃС‚РёРіРЅСѓС‚ РЅСѓР¶РЅС‹Р№ РѕР±СЉС‘Рј. Р­С‚Рѕ РґРµР»Р°РµС‚ РїСЂРµРґР»Р°РіР°РµРјС‹Р№ Р·РґРµСЃСЊ РіРµРЅРµСЂР°С‚РѕСЂ РµРґРёРЅСЃС‚РІРµРЅРЅС‹Рј РЅР°СЃС‚РѕСЏС‰РёРј Lorem Ipsum РіРµРЅРµСЂР°С‚РѕСЂРѕРј. РћРЅ РёСЃРїРѕР»СЊР·СѓРµС‚ СЃР»РѕРІР°СЂСЊ РёР· Р±РѕР»РµРµ С‡РµРј 200 Р»Р°С‚РёРЅСЃРєРёС… СЃР»РѕРІ, Р° С‚Р°РєР¶Рµ РЅР°Р±РѕСЂ РјРѕРґРµР»РµР№ РїСЂРµРґР»РѕР¶РµРЅРёР№. Р’ СЂРµР·СѓР»СЊС‚Р°С‚Рµ СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅС‹Р№ Lorem Ipsum РІС‹РіР»СЏРґРёС‚ РїСЂР°РІРґРѕРїРѕРґРѕР±РЅРѕ, РЅРµ РёРјРµРµС‚ РїРѕРІС‚РѕСЂСЏСЋС‰РёС…СЃСЏ Р°Р±Р·Р°С†РµР№ РёР»Рё \"РЅРµРІРѕР·РјРѕР¶РЅС‹С…\" СЃР»РѕРІ.",
+      "preview": "",
+      "date": "2023-09-25T08:51:01.379Z",
+      "views_count": 0
+    }
+  }
+]
