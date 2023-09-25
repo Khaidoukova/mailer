@@ -16,12 +16,17 @@
                 <a class="btn btn-primary btn-lg" href="{% url 'users:login' %}" role="button">Добавить клиента</a>
                 <a class="btn btn-primary btn-lg" href="{% url 'users:login' %}" role="button">Создать рассылку</a>
                 {% endif %}
-
             </p>
+
         </div>
     </div>
 </div>
-<!-- CTA -->
+<p>
+            <h5 class="display-4">Количество рассылок всего: {{ mailing_count }}<br>
+            Количество активных рассылок: {{ active_mailings }}<br>
+            Количество уникальных клиентов для рассылок: {{ unique_clients }}<br></h5>
+            </p>
+
 <div id="home-cta" class="jumbotron jumbotron-fluid">
     <div class="container">
         <div class="row">
@@ -35,6 +40,10 @@
             <div class="col-md-auto">
                 <p class="lead">
                     <a class="btn btn-primary btn-lg" href="{% url 'blog:list' %}" role="button">Перейти в блог</a>
+                    {% for blog in random_blogs %}
+                <li>
+                    <a href="{% url 'blog:view' blog.pk %}">{{ blog.title }}</a>
+                </li> {% endfor %}
                 </p>
                 </div>
             </div>

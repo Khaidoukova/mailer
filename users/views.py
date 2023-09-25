@@ -29,7 +29,7 @@ class UserUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
 class RegisterView(CreateView):
     model = User
     form_class = UserRegisterForm
-    success_url = reverse_lazy('users:login')
+    success_url = reverse_lazy('users:confirm_email')
     template_name = 'users/register.html'
 
     def form_valid(self, form):
@@ -75,5 +75,9 @@ def verify_email(request, key):
     user.email_confirm_key = ''
     user.save()
     return redirect('users:login')
+
+class UserMailConfirmView(RegisterView):
+    template_name = 'users/confirm_email.html'
+
 
 

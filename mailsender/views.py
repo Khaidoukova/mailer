@@ -1,8 +1,12 @@
+import random
+from blog.utils import blog_cache
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 
+from blog.models import Blog
 from mailsender.forms import ClientForm, MailingForm, ManagerUpdateForm
 from mailsender.models import Client, Mailing, MailingLogs
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
@@ -13,6 +17,25 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        mailing_count = Mailing.objects.count()
+        context['mailing_count'] = mailing_count
+
+        active_mailings = Mailing.objects.filter(status='created').count()
+        context['active_mailings'] = active_mailings
+
+        unique_clients = Client.objects.count()
+        context['unique_clients'] = unique_clients
+
+        all_blogs = list(blog_cache())
+        print(all_blogs)
+
+        if len(all_blogs) >= 3:
+            random_blogs = random.sample(all_blogs, 3)
+        else:
+            random_blogs = all_blogs
+
+        context['random_blogs'] = random_blogs
 
         return context
 
@@ -54,7 +77,7 @@ class MailingListView(ListView):
 
     def get_queryset(self):
         user = self.request.user
-        if user.is_staff:
+        if user.groups.filter(name='Managers').exists() or user.is_superuser:
             queryset = super().get_queryset()
         else:
             queryset = super().get_queryset().filter(
